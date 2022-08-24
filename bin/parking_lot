@@ -1,0 +1,14 @@
+# Add script to run program here.
+# Complete bin/setup so that after it is
+# run, bin/parking_lot can be used to launch
+# it.
+
+#!/bin/sh
+
+binDir="$( cd "$( dirname "${BASH_SOURCE[0]}" )" >/dev/null && pwd )"
+projectDir="$(dirname "$binDir")"
+
+targetDir=$projectDir/application/target
+jarName=application.jar
+
+java -jar $targetDir/$jarName $1
